@@ -1,0 +1,660 @@
+/* General Reset */
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 18px;
+    text-align: center;
+}
+
+/* Title */
+h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#auth-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+}
+
+/* Main Container */
+.container {
+    max-width:450px;
+    margin: auto;
+    padding: 25px;
+    background: rgba(30, 30, 30, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+    text-align: center;
+}
+
+/* Title */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: #2c2c2c;
+    color: #fff;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    background: #3b3b3b;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Dropdown */
+select {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #444;
+    color: white;
+    border: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    background: #ff5e78;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ff3c61;
+}
+
+/* Message */
+#message {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+/* Logout functionalit  */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #121212;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
+}
+
+#logout {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+    background: #ff5e78;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#logout:hover {
+    background: #ff3c61;
+}
+
+/* Logo */ 
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.navbar {
+    background: #e91e63;
+    padding: 10px 25px; /* Reduced top padding to remove space */
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns items vertically */
+    color: white;
+    margin-top: 0; /* Ensures no extra space at the top */
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px; /* Increases space between menu items */
+}
+
+.nav-links li {
+    display: inline;
+    list-style: none; /* Removes bullet points */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+    padding: 5px 10px; /* Adds spacing around text for better clickability */
+}
+
+.nav-links button {
+    background: white;
+    color: #e91e63;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.nav-links a:hover, .nav-links .active {
+    color: #FFC0CB;
+    font-weight: bold;
+}
+
+/* Content Styling */
+.content-section {
+    text-align: center;
+    padding: 50px;
+    color: #fff;
+    background-color: #111;
+}
+
+/* Image Responsive */
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 50%;
+    max-width: 350px;
+    border-radius: 10px;
+}
+
+/* Introduction Section */
+.intro {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.caption {
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* Video Section */
+#video-container {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#instructional-video {
+    width: 60%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+
+/* Title Styling */
+.section-title {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Image Styling */
+.image-container img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* Intro Text */
+.intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    padding: 0 20px;
+}
+
+/* Language Selection Styling */
+.language-selection {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 15px;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 20px auto;
+    font-size: 1.2rem;
+}
+
+/* Custom Radio Buttons */
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.custom-radio input {
+    display: none;
+}
+
+.custom-radio .radio-label {
+    background: white;
+    color: #8b008b;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.custom-radio input:checked + .radio-label {
+    background: #ff4081;
+    color: white;
+    box-shadow: 0px 3px 8px rgba(255, 64, 129, 0.6);
+}
+
+/* Video Container */
+#video-container {
+    margin-top: 20px;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 50px 30px;
+    align-items: center; /* Center align the cards */
+}
+
+/* About Card */
+.about-card {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content */
+    flex-direction: column; /* Stack image & text */
+    gap: 30px;
+    background: linear-gradient(135deg, #222, #444); /* Gradient background */
+    padding: 25px;
+    border-radius: 20px; /* Slightly rounded corners for square shape */
+    box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+    width: 450px;
+    height: 650px;
+    text-align: center;
+}
+
+/* Hover Effect */
+.about-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 10px 18px rgba(255, 255, 255, 0.2);
+}
+
+/* Image */
+.about-img {
+    width: 120px;/* Increased image size */
+    height: 120px;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.about-img:hover {
+    transform: rotate(3deg) scale(1.07);
+    box-shadow: 0px 5px 12px rgba(255, 255, 255, 0.3);
+}
+
+/* About Text */
+.about-text {
+    flex: 1;
+    text-align: justify;
+}
+
+/* Heading Animation */
+.about-text h3 {
+    font-size: 26px; /* Increased font size */
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ff4081, #ff6ec4);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+/* Text and List */
+.about-text p,
+.about-text ul {
+    font-size: 18px; /* Improved text size */
+    line-height: 1.8;
+    color: #eee; /* Slightly brighter text */
+}
+
+/* List Styling */
+.about-text ul {
+    padding-left: 25px;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+    list-style: disc;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-card {
+        flex-direction: column;
+        text-align: center;
+        width: 90%; /* Adjusted width for smaller screens */
+    }
+
+    .about-img {
+        width: 100%;
+        max-width: 280px; /* Keep a good size for responsiveness */
+    }
+
+    .about-text h3 {
+        font-size: 24px;
+    }
+
+    .about-text p,
+    .about-text ul {
+        font-size: 16px;
+    }
+}
+
+/* Techniques Section */
+.slideshow-container {
+    position: relative;
+    margin: 40px auto;
+    max-width: 800px; /* Increased width */
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #222, #333);
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Styling */
+.slideshow-container img {
+    width: 100%;
+    max-width: 700px; /* Increased visibility */
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* Image Hover Effect */
+.slideshow-container img:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.4);
+}
+
+/* Caption Styling */
+p#caption {
+    font-size: 20px;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #ff69b4;
+    text-shadow: 1px 1px 5px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Slideshow Buttons */
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    margin: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background-color: #ff2e93;
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Slide Transition */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 90%;
+    }
+
+    .slideshow-container img {
+        max-width: 100%;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+/* Resources Section */
+.resource-list {
+    list-style: none;
+    padding: 0;
+}
+
+.resource-list li {
+    margin: 10px 0;
+}
+
+.resource-list a {
+    text-decoration: none;
+    color: #ff69b4;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.resource-list a:hover {
+    text-decoration: underline;
+    color: #ff2e93;
+}
+
+/* AI Assistant Page Styles */
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    max-width:900px; /* Adjust width to fit inside the box */
+    height: 700px;
+    margin: auto;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden; /* Prevent content from overflowing */
+}
+
+#chat-box {
+    flex: 1;
+    height: 600px; 
+    overflow-y: auto;
+    padding: 15px;
+    background-color: #1e1e1e;
+    border-radius: 8px;
+    font-size: 16px;
+    color: white;
+}
+
+.chat-message {
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.user-message {
+    background-color: #872958;
+    color: white;
+    text-align: right;
+    font-size: 16px;
+}
+
+.bot-message {
+    background-color: #403838;
+    color: rgb(227, 215, 215);
+    text-align: left;
+    font-size: 16px;
+}
+
+.chat-input {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    gap: 10px; 
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;  
+}
+
+/* Input field */
+.chat-input button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #ff2e93;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 600px;
+    margin: auto;
+    background-color: #222;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    background-color: #333;
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: none;
+}
+
+button {
+    background-color: #ff69b4;
+    border: none;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff2e93;
+}

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women's Health</title>
+    <link rel="stylesheet" href="styles.css">
+     <!-- Your script should be loaded after Firebase -->
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Login/Signup Section -->
+    <div id="auth-container">
+        <h2>Women's Health - Login/Signup</h2>
+        <div class="container">
+            <select id="action">
+                <option value="Login">Login</option>
+                <option value="Signup">Signup</option>
+            </select>
+            <div class="input-group">
+                <input type="text" id="name" class="hidden" placeholder="Name" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" autocomplete="off">
+            </div>
+            <button id="submit">Submit</button>
+            <p id="message"></p>
+        </div>
+    </div>
+
+    <!-- Main Site Content (Hidden Initially) -->
+    <div id="main-site" style="display: none;">
+    
+        <header>
+            <nav class="navbar">
+                <div class="logo">Women's Health | Awareness</div>
+                 <ul class="nav-links">
+                    <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('about')">About</a></li>
+                    <li><a href="#" onclick="showSection('techniques')">Techniques</a></li>
+                    <li><a href="#" onclick="showSection('resources')">Resources</a></li>
+                    <li><a href="#" onclick="showSection('ai-assistant')">AI Assistant</a></li>
+                    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+    <!-- Home Section -->
+    <section id="home" class="content-section">
+        <div class="container">
+            <h1>Women's Health</h1>
+            <div class="image-container">
+                <!-- <img src="frontend/assets/image.png" alt="Breast Cancer Awareness"> -->
+                <img src="assets/image.png" alt="Breast Cancer Awareness">
+            </div>
+            <div class="intro">
+                <p>Breast cancer is one of the most common cancers among women in the reproductive age group. With an estimated <strong>2.3 million cases every year</strong>, approximately 1.15 million people globally are diagnosed with breast cancer. The global burden of breast cancer is projected to surpass <strong>2 million cases by 2030</strong>.</p>
+                <p>In India, as of 2018, breast cancer accounted for <strong>32.8% of all cancers</strong> in women aged 25-49, with a mortality rate of <strong>27.7%</strong>. Early detection through <strong>Breast Self-Examination (BSE)</strong> is crucial. BSE is a simple, cost-effective, and non-invasive method recommended monthly after the menstrual period.</p>
+                <p>This AI-assisted simulation is designed to help you gain confidence in performing BSE, ensuring better healthcare education and self-care practices.</p>
+            </div>
+            <!-- High Contrast Language Selection -->
+            <div class="language-selection">
+                <p>Choose the language for the instructional video:</p>
+                <label class="custom-radio">
+                    <input type="radio" name="language" value="bengali" onclick="showVideo('bengali')">
+                    <span class="radio-label">Bengali</span>
+                </label>
+                <label class="custom-radio">
+                    <input type="radio" name="language" value="hindi" checked onclick="showVideo('hindi')">
+                    <span class="radio-label">Hindi</span>
+                </label>
+            </div>
+            <div id="video-container">
+                <video id="instructional-video" controls>
+                    <source id="video-source" src="assets/videos/bse_video_hindi.webm" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section -->
+    <section id="about" class="content-section" style="display: none;">
+        <div class="container">
+            <h2>About Breast Cancer</h2>
+            <div class="about-container">
+                <div class="about-card">
+                    <img src="assets/about/1.png" alt="Breast Cancer Awareness" class="about-img">
+                    <div class="about-text">
+                        <h3>What is Breast Cancer?</h3>
+                        <p>Breast cancer is a disease where breast cells grow uncontrollably. It can develop in different parts of the breast and, if detected early, can be treated effectively.</p>
+                        <p>Common signs include lumps in the breast, changes in size/shape, and unusual pain. Regular screenings and self-examinations aid early detection.</p>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <img src="assets/about/2.jpeg" alt="Early Detection of Breast Cancer" class="about-img">
+                    <div class="about-text">
+                        <h3>Why is Early Detection Important?</h3>
+                        <p>Early detection greatly improves survival rates. Methods such as Breast Self-Examination (BSE), clinical exams, and mammograms help identify cancer at an early stage.</p>
+                        <p>Studies show that early detection increases the chances of successful treatment and reduces mortality rates significantly.</p>
+                    </div>
+                </div>
+                <div class="about-card">
+                    <img src="assets/about/3.jpg" alt="Breast Self-Examination Steps" class="about-img">
+                    <div class="about-text">
+                        <h3>How to Perform Breast Self-Examination (BSE)?</h3>
+                        <p>BSE is a simple method done at home every month to check for abnormalities in the breast:</p>
+                        <ul>
+                            <li>Stand in front of a mirror and inspect for changes in shape, size, or color.</li>
+                            <li>Raise your arms and check for dimpling, puckering, or swelling.</li>
+                            <li>Use your fingertips to feel for lumps in circular motions across the breast.</li>
+                            <li>Repeat the process while lying down for a better examination.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="techniques" class="content-section" style="display: none;">
+        <div class="container">
+            <h1>Breast Self-Exam Techniques</h1>
+            <div class="slideshow-container">
+                <img id="slideshow-image" src="assets/PPT_Images/Slide1.PNG" alt="Breast Self-Exam">
+                <p id="caption">Technique of Palpation (1/7)</p>
+            </div>
+            
+            <div class="buttons">
+                <button id="start-btn">Start</button>
+                <button id="stop-btn">Stop</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="content-section" style="display: none;">
+        <div class="container">
+            <h2>Resources</h2>
+            <p>Here are some valuable resources for breast cancer awareness, prevention, and support:</p>
+            <ul class="resource-list">
+                <li><a href="https://www.cancer.org" target="_blank">American Cancer Society</a></li>
+                <li><a href="https://www.breastcancer.org" target="_blank">Breastcancer.org</a></li>
+                <li><a href="https://www.who.int" target="_blank">World Health Organization</a></li>
+            </ul>
+        </div>
+    </section>
+
+     <!-- AI Assistant Section -->
+    <section id="ai-assistant" class="content-section" style="display: none;" autocomplete="off">
+        <div class="container">
+            <h2>AI Health Assistant</h2>
+            <div class="chat-container">
+                <div id="chat-box"></div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask me anything about women's health..." autocomplete="off" spellcheck="false"/>
+                    <button id="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact" class="content-section" style="display: none;">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need support? Fill out the form below, and we'll get back to you.</p>
+        
+            <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
+                <input type="hidden" name="access_key" value="857b18b8-8393-4540-8b2f-ca735353069c">
+                <input type="hidden" name="_captcha" value="false">
+            
+                <div class="form-group">
+                    <label for="name-form">Name:</label>
+                    <input type="text" id="name-form" name="name" required placeholder="Your Name" autocomplete="name">
+                </div>
+    
+                <div class="form-group">
+                    <label for="email-form">Email:</label>
+                    <input type="email" id="email-form" name="email" required placeholder="Your Email" autocomplete="email">
+                </div>
+    
+                <div class="form-group">
+                    <label for="message-form">Message:</label>
+                    <textarea id="message-form" name="message" rows="5" required placeholder="Your Message"></textarea>
+                </div>
+    
+                <button type="submit">Send Message</button>
+            </form>
+    
+            <!-- Success Message -->
+            <p id="success-message" style="display: none; color: #4CAF50; font-size: 18px; margin-top: 10px;">
+                ✅ Message sent successfully!
+            </p>
+        </div>
+    </section>    
+
+    <footer>
+        <button id="logout">Logout</button>
+    </footer>
+    </div>
+
+</body>
+</html>
