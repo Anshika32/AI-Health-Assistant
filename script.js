@@ -1,5 +1,4 @@
-const BACKEND_URL = "http://localhost:3000";  // Backend proxy server
-
+const BACKEND_URL = "https://ai-health-assistant-backend-b4a1.onrender.com";  // Backend proxy server
 const authContainer = document.getElementById("auth-container");
 const mainSite = document.getElementById("main-site");
 const logoutBtn = document.getElementById("logout");
