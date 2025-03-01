@@ -4,28 +4,38 @@ body {
     color: #fff;
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 18px;
+    padding: 0.5%;
     text-align: center;
 }
 
 /* Title */
 h1 {
-    font-size: 28px;
+    font-size: 3vw; /* Responsive font size */
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
+#auth-container h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Auth Container */
 #auth-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; 
+    min-height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 /* Main Container */
 .container {
-    max-width:450px;
+    max-width: 450px;
+    width: 90%;
     margin: auto;
     padding: 25px;
     background: rgba(30, 30, 30, 0.9);
@@ -36,7 +46,7 @@ h1 {
 
 /* Title */
 h2 {
-    font-size: 24px;
+    font-size: 4vw; /* Responsive font size */
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -45,10 +55,11 @@ h2 {
 .input-group {
     position: relative;
     margin-bottom: 15px;
+    width: 97%;
 }
 
 input {
-    width: 90%;
+    width: 97%;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -66,6 +77,7 @@ input:focus {
 
 /* Dropdown */
 select {
+    width: 97%;
     padding: 10px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -77,7 +89,7 @@ select {
 
 /* Button */
 button {
-    width: 100%;
+    width: 98%;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -98,17 +110,19 @@ button:hover {
     font-size: 14px;
 }
 
-/* Logout functionalit  */
+/* Logout functionality */
 footer {
     position: fixed;
-    bottom: 0;
-    left: 0;
     width: 100%;
     background: #121212;
     text-align: center;
     padding: 10px;
+    /* position: relative; */
+    bottom: 0;
+    left: 0;
     box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
 }
+
 
 #logout {
     width: auto;
@@ -125,40 +139,103 @@ footer {
     background: #ff3c61;
 }
 
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 20px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    footer {
+        position: fixed;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input,
+    select,
+    button {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    footer {
+        position: fixed;
+        padding: 10px;
+    }
+}
+
 /* Logo */ 
 .logo {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
     color: white;
 }
 
 .navbar {
     background: #e91e63;
-    padding: 10px 25px; /* Reduced top padding to remove space */
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center; /* Aligns items vertically */
+    align-items: center;
     color: white;
-    margin-top: 0; /* Ensures no extra space at the top */
+    position: relative;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 .nav-links {
     display: flex;
-    gap: 20px; /* Increases space between menu items */
+    gap: 10px;
+    list-style: none;
 }
 
 .nav-links li {
-    display: inline;
-    list-style: none; /* Removes bullet points */
+    /* list-style: none;  */
+    margin-right: -1%;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #fff;
-    font-size: 18px;
+    color: white;
+    font-size: 1rem;
     transition: color 0.3s ease;
-    cursor: pointer;
-    padding: 5px 10px; /* Adds spacing around text for better clickability */
+    padding: 5px 10px;
 }
 
 .nav-links button {
@@ -166,9 +243,13 @@ footer {
     color: #e91e63;
     padding: 5px 10px;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
-.nav-links a:hover, .nav-links .active {
+.nav-links a:hover,
+.nav-links .active {
     color: #FFC0CB;
     font-weight: bold;
 }
@@ -190,7 +271,7 @@ footer {
 }
 
 .image-container img {
-    width: 50%;
+    width: 100%;
     max-width: 350px;
     border-radius: 10px;
 }
@@ -198,35 +279,34 @@ footer {
 /* Introduction Section */
 .intro {
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
 }
 
 .caption {
-    font-size: 14px;
+    font-size: 0.9rem;
     color: #999;
     margin-top: 5px;
 }
 
 /* Video Section */
 #video-container {
-    display: block;
     margin-top: 20px;
     text-align: center;
 }
 
 #instructional-video {
-    width: 60%;
+    width: 100%;
     max-width: 600px;
     height: auto;
     border-radius: 10px;
-    border: 2px solid #fff;
+    border: 2px solid white;
 }
 
 /* Title Styling */
 .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-weight: bold;
     margin-bottom: 20px;
 }
@@ -296,32 +376,106 @@ video {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
 
+/* Sidebar (Hidden by Default) */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100%;
+    background: #e91e63;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    z-index: 1100;
+}
+
+.sidebar .nav-links {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.sidebar .nav-links li {
+    padding: 15px 20px;
+}
+
+.sidebar .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.2rem;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar .nav-links a:hover {
+    background: #ff3c61;
+    padding-left: 10px;
+}
+
+/* Show Sidebar when Active */
+.sidebar.active {
+    left: 0;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 50px;
+    top: 5px;
+    z-index: 1100;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 1px;
+    background: white;
+    margin: 5px 0;
+    transition: 0.3s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+}
+
 /* About Section */
 .about-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap; /* Ensures proper wrapping on small screens */
     gap: 40px;
     padding: 50px 30px;
-    align-items: center; /* Center align the cards */
+    justify-content: center;
+    align-items: center;
 }
 
 /* About Card */
 .about-card {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content */
+    justify-content: center;
     flex-direction: column; /* Stack image & text */
     gap: 30px;
-    background: linear-gradient(135deg, #222, #444); /* Gradient background */
+    background: linear-gradient(135deg, #222, #444);
     padding: 25px;
-    border-radius: 20px; /* Slightly rounded corners for square shape */
+    border-radius: 20px;
     box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease-out forwards;
-    width: 450px;
-    height: 650px;
+    width: 100%;
+    max-width: 490px;
+    min-height: 650px;
     text-align: center;
 }
 
@@ -333,8 +487,8 @@ video {
 
 /* Image */
 .about-img {
-    width: 120px;/* Increased image size */
-    height: 120px;
+    width: 140px;/* Increased image size */
+    height: 140px;
     border-radius: 12px;
     transition: transform 0.3s ease-in-out;
 }
@@ -349,22 +503,30 @@ video {
 .about-text {
     flex: 1;
     text-align: justify;
+    max-width: 90%;
+}
+
+#about h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
+    font-weight: bold;
 }
 
 /* Heading Animation */
 .about-text h3 {
-    font-size: 26px; /* Increased font size */
+    font-size: 1.8rem;
     margin-bottom: 15px;
     background: linear-gradient(90deg, #ff4081, #ff6ec4);
     -webkit-background-clip: text;
     color: transparent;
     font-weight: bold;
+    text-align: center;
 }
 
 /* Text and List */
 .about-text p,
 .about-text ul {
-    font-size: 18px; /* Improved text size */
+    font-size: 1rem; /* Improved text size */
     line-height: 1.8;
     color: #eee; /* Slightly brighter text */
 }
@@ -391,25 +553,61 @@ video {
     }
 }
 
-@media (max-width: 768px) {
+/* Responsive Design */
+@media (max-width: 1024px) {
     .about-card {
-        flex-direction: column;
-        text-align: center;
-        width: 90%; /* Adjusted width for smaller screens */
-    }
-
-    .about-img {
-        width: 100%;
-        max-width: 280px; /* Keep a good size for responsiveness */
+        width: 80%;
     }
 
     .about-text h3 {
-        font-size: 24px;
+        font-size: 1.5rem;
     }
 
     .about-text p,
     .about-text ul {
-        font-size: 16px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        padding: 30px;
+    }
+
+    .about-card {
+        width: 90%;
+        min-height: auto;
+    }
+
+    .about-img {
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .about-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .about-text p,
+    .about-text ul {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-card {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .about-text h3 {
+        font-size: 1.3rem;
+    }
+
+    .about-text p,
+    .about-text ul {
+        font-size: 0.85rem;
     }
 }
 
@@ -417,7 +615,7 @@ video {
 .slideshow-container {
     position: relative;
     margin: 40px auto;
-    max-width: 800px; /* Increased width */
+    max-width: 800px;
     text-align: center;
     padding: 20px;
     background: linear-gradient(135deg, #222, #333);
@@ -430,7 +628,8 @@ video {
 /* Image Styling */
 .slideshow-container img {
     width: 100%;
-    max-width: 700px; /* Increased visibility */
+    max-width: 700px;
+    height: auto;
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
     transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
@@ -444,7 +643,7 @@ video {
 
 /* Caption Styling */
 p#caption {
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-top: 15px;
     font-weight: 600;
     color: #ff69b4;
@@ -452,9 +651,18 @@ p#caption {
     animation: fadeIn 1s ease-in-out;
 }
 
+#techniques h1 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
+    font-weight: bold;
+}
+
 /* Slideshow Buttons */
 .buttons {
     margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures buttons wrap on small screens */
 }
 
 button {
@@ -463,7 +671,7 @@ button {
     color: white;
     padding: 12px 25px;
     margin: 8px;
-    font-size: 18px;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 8px;
     font-weight: bold;
@@ -489,8 +697,8 @@ button:hover {
     }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* ✅ Responsive Design */
+@media (max-width: 1024px) {
     .slideshow-container {
         max-width: 90%;
     }
@@ -500,8 +708,41 @@ button:hover {
     }
 
     button {
-        font-size: 16px;
-        padding: 10px 20px;
+        font-size: 0.95rem;
+        padding: 10px 22px;
+    }
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        max-width: 95%;
+        padding: 15px;
+    }
+
+    p#caption {
+        font-size: 1.1rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 10px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .slideshow-container {
+        max-width: 98%;
+        padding: 10px;
+    }
+
+    p#caption {
+        font-size: 1rem;
+    }
+
+    button {
+        font-size: 0.85rem;
+        padding: 8px 15px;
+        margin: 5px;
     }
 }
 
@@ -509,100 +750,254 @@ button:hover {
 .resource-list {
     list-style: none;
     padding: 0;
+    margin: 0 auto;
+    max-width: 800px; /* Centers the list and prevents it from being too wide */
 }
 
 .resource-list li {
-    margin: 10px 0;
+    margin: 12px 0;
+    padding: 10px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
 }
 
-.resource-list a {
-    text-decoration: none;
-    color: #ff69b4;
-    font-size: 18px;
+#resources h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
     font-weight: bold;
 }
 
+/* Make links more readable and clickable */
+.resource-list a {
+    text-decoration: none;
+    color: #ff69b4;
+    font-size: 1.1rem; /* Scales better on different devices */
+    font-weight: bold;
+    display: inline-block;
+    padding: 5px 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Hover Effect */
 .resource-list a:hover {
     text-decoration: underline;
     color: #ff2e93;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .resource-list {
+        max-width: 90%;
+    }
+
+    .resource-list a {
+        font-size: 1rem;
+        padding: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .resource-list {
+        max-width: 98%;
+    }
+
+    .resource-list a {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
 }
 
 /* AI Assistant Page Styles */
 .chat-container {
     display: flex;
     flex-direction: column;
-    width: 95%;
-    max-width:900px; /* Adjust width to fit inside the box */
-    height: 700px;
+    width: 90%;
+    max-width: 500px;
+    height: auto; 
+    min-height: 500px; /* Ensures minimum size */
     margin: auto;
     background-color: #222;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
     position: relative;
-    overflow: hidden; /* Prevent content from overflowing */
+    max-height: 90vh; /* Ensure it has enough space */
+    overflow: auto; /* Allow scrolling */
 }
 
+#ai-assistant h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Chat Box */
 #chat-box {
     flex: 1;
-    height: 600px; 
+    height: 350px; /* Reduced height */
     overflow-y: auto;
-    padding: 15px;
+    padding: 10px;
     background-color: #1e1e1e;
     border-radius: 8px;
-    font-size: 16px;
+    font-size: 1rem;
     color: white;
+    /* word-wrap: break-word; */
+    display: flex;
+    flex-direction: column;
+    max-height: 400px; /* Adjust as needed */
+    overflow-y: auto;
 }
 
+/* Ensures smooth scrolling */
+#chat-box::-webkit-scrollbar {
+    width: 6px;
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+    background: #ff69b4;
+    border-radius: 10px;
+}
+
+/* Chat Messages */
 .chat-message {
     margin-bottom: 12px;
     padding: 10px;
     border-radius: 6px;
-    font-size: 16px;
+    font-size: 1rem;
+    word-wrap: break-word;
+    white-space: pre-wrap;
 }
 
 .user-message {
     background-color: #872958;
     color: white;
     text-align: right;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .bot-message {
     background-color: #403838;
     color: rgb(227, 215, 215);
     text-align: left;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
+/* Chat Input */
 .chat-input {
     display: flex;
-    flex-direction: column;
-    margin-top: 15px;
-    gap: 10px; 
+    flex-direction: column; /* Horizontal by default */
+    align-items: center;
+    /* justify-content: space-between; */
+    justify-content: center;
+    gap: 10px;
+    background-color: #1e1e1e;
+    padding: 12px;
+    border-radius: 8px;
+    width: 100%;
 }
 
+/* Input Field */
 .chat-input input {
+    width: 100%;
     flex: 1;
-    padding: 12px;
+    padding: 10px;
     border: none;
     border-radius: 5px;
-    font-size: 16px;  
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    outline: none;
 }
 
-/* Input field */
+#clear-btn {
+    background-color: #4a2424; /* Red color to indicate reset */
+    color: white;
+    border: none;
+    padding: 7px 2px;
+    width: 100px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: background 0.3s ease-in-out;
+    flex-shrink: 0;
+}
+
+#clear-btn:hover {
+    background-color: #583030; /* Darker red on hover */
+}
+
+/* Send Button */
 .chat-input button {
     background-color: #ff69b4;
     color: white;
     border: none;
-    padding: 12px 20px;
+    padding: 12px 15px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 1rem;
+    transition: background 0.3s ease-in-out;
+    flex-shrink: 0;
 }
 
 button:hover {
     background-color: #ff2e93;
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+    .chat-container {
+        width: 80%;
+        min-height: 500px; /* Adjusted for mobile */
+        padding: 5px;
+    }
+
+    #chat-box {
+        height: 350px; /* Adjusted height */
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .chat-input {
+        flex-direction: column; /* Stack on small screens */
+        gap: 8px;
+    }
+
+    .chat-input input {
+        font-size: 0.9rem;
+        padding: 10px;
+    }
+
+    .chat-input button {
+        font-size: 0.9rem;
+        padding: 10px;
+        width: 100%; /* Full width button */
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-container {
+        width: 100%;
+        padding: 8px;
+    }
+
+    #chat-box {
+        height: 300px; /* Smaller height */
+        font-size: 0.85rem;
+    }
+
+    .chat-input {
+        gap: 6px;
+    }
+
+    .chat-input input {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    .chat-input button {
+        padding: 8px;
+        font-size: 0.85rem;
+    }
 }
 
 /* Contact Form Styles */
@@ -632,13 +1027,19 @@ button:hover {
 
 .form-group input,
 .form-group textarea {
-    width: 100%;
+    width: 98%;
     padding: 10px;
     border-radius: 5px;
     border: none;
     font-size: 16px;
     background-color: #333;
     color: #fff;
+}
+
+#contact h2 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
+    font-weight: bold;
 }
 
 .form-group textarea {
@@ -657,4 +1058,49 @@ button {
 
 button:hover {
     background-color: #ff2e93;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 95%; /* Make it more fluid */
+        padding: 15px;
+    }
+
+    .form-group label {
+        font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form {
+        width: 100%; /* Full width for small screens */
+        padding: 10px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
 }
