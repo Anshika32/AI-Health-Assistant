@@ -1,4 +1,5 @@
 const BACKEND_URL = "https://ai-health-assistant-backend-b4a1.onrender.com";  // Backend proxy server
+
 const authContainer = document.getElementById("auth-container");
 const mainSite = document.getElementById("main-site");
 const logoutBtn = document.getElementById("logout");
@@ -131,8 +132,28 @@ logoutBtn.addEventListener("click", () => {
 });
 
 
+function toggleMenu() {
+    const sidebar = document.querySelector(".sidebar");
+    sidebar.classList.toggle("active");
 
+    if (sidebar.classList.contains("active")) {
+        // Add event listener to close sidebar when clicking outside
+        document.addEventListener("click", closeSidebarOnClickOutside);
+    } else {
+        document.removeEventListener("click", closeSidebarOnClickOutside);
+    }
+}
 
+function closeSidebarOnClickOutside(event) {
+    const sidebar = document.querySelector(".sidebar");
+    const menuToggle = document.querySelector(".menu-toggle");
+
+    // If the click is outside the sidebar and not on the menu toggle button, close the sidebar
+    if (!sidebar.contains(event.target) && !menuToggle.contains(event.target)) {
+        sidebar.classList.remove("active");
+        document.removeEventListener("click", closeSidebarOnClickOutside);
+    }
+}
 
 
 // Function to toggle sections
@@ -268,7 +289,10 @@ function displayMessage(message, sender) {
 
     messageDiv.innerHTML = message; // Use innerHTML to render formatted text
     chatBox.appendChild(messageDiv);
-    chatBox.scrollTop = chatBox.scrollHeight;
+    
+    setTimeout(() => {
+        chatBox.scrollTop = chatBox.scrollHeight; 
+    }, 100);
 }
 
 document.getElementById("user-input").addEventListener("keypress", function (event) {
@@ -277,6 +301,11 @@ document.getElementById("user-input").addEventListener("keypress", function (eve
         document.getElementById("send-btn").click();  // Click the send button
     }
 });
+
+function clearChat() {
+    document.getElementById("chat-box").innerHTML = ""; // Clears chat content
+}
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("contact-form");
