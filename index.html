@@ -38,7 +38,12 @@
         <header>
             <nav class="navbar">
                 <div class="logo">Women's Health | Awareness</div>
-                 <ul class="nav-links">
+                <div class="menu-toggle" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <ul class="nav-links">
                     <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
                     <li><a href="#" onclick="showSection('about')">About</a></li>
                     <li><a href="#" onclick="showSection('techniques')">Techniques</a></li>
@@ -47,7 +52,20 @@
                     <li><a href="#" onclick="showSection('contact')">Contact</a></li>
                 </ul>
             </nav>
+        
+            <!-- Sidebar (Only Visible on Mobile) -->
+            <div class="sidebar">
+                <ul class="nav-links">
+                    <li><a href="#" class="active" onclick="showSection('home')">Home</a></li>
+                    <li><a href="#" onclick="showSection('about')">About</a></li>
+                    <li><a href="#" onclick="showSection('techniques')">Techniques</a></li>
+                    <li><a href="#" onclick="showSection('resources')">Resources</a></li>
+                    <li><a href="#" onclick="showSection('ai-assistant')">AI Assistant</a></li>
+                    <li><a href="#" onclick="showSection('contact')">Contact</a></li>
+                </ul>
+            </div>
         </header>
+        
 
     <!-- Home Section -->
     <section id="home" class="content-section">
@@ -160,6 +178,7 @@
                 <div class="chat-input">
                     <input type="text" id="user-input" placeholder="Ask me anything about women's health..." autocomplete="off" spellcheck="false"/>
                     <button id="send-btn" onclick="sendMessage()">Send</button>
+                    <button id="clear-btn" onclick="clearChat()">Clear Chat</button>  <!-- New button -->
                 </div>
             </div>
         </div>
