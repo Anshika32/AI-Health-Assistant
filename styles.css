@@ -1,10 +1,19 @@
 /* General Reset */
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     background-color: #121212;
     color: #fff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0.5%;
     text-align: center;
 }
 
@@ -34,9 +43,14 @@ h1 {
 
 /* Main Container */
 .container {
-    max-width: 450px;
-    width: 90%;
-    margin: auto;
+    max-width: 1000px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
     padding: 25px;
     background: rgba(30, 30, 30, 0.9);
     border-radius: 12px;
@@ -55,11 +69,11 @@ h2 {
 .input-group {
     position: relative;
     margin-bottom: 15px;
-    width: 97%;
+    width: 100%;
 }
 
 input {
-    width: 97%;
+    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -72,12 +86,12 @@ input {
 
 input:focus {
     background: #3b3b3b;
-    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
 }
 
 /* Dropdown */
 select {
-    width: 97%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     font-size: 16px;
@@ -89,7 +103,7 @@ select {
 
 /* Button */
 button {
-    width: 98%;
+    width: 100%;
     padding: 12px;
     border: none;
     border-radius: 8px;
@@ -117,12 +131,11 @@ footer {
     background: #121212;
     text-align: center;
     padding: 10px;
-    /* position: relative; */
+    box-sizing: border-box;
     bottom: 0;
     left: 0;
     box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.1);
 }
-
 
 #logout {
     width: auto;
@@ -146,7 +159,7 @@ footer {
     }
 
     h1 {
-        font-size: 20px;
+        font-size: 2rem;
     }
 
     h2 {
@@ -173,7 +186,7 @@ footer {
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 20px;
+        font-size: 2rem;
     }
 
     h2 {
@@ -205,6 +218,12 @@ footer {
     color: white;
 }
 
+#home h1 {
+    font-size: 2rem; /* Adjust size as needed */
+    text-align: center;
+    font-weight: bold;
+}
+
 .navbar {
     background: #e91e63;
     padding: 10px 20px;
@@ -217,17 +236,22 @@ footer {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-sizing: border-box;
 }
 
 .nav-links {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
     list-style: none;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
 }
 
 .nav-links li {
     /* list-style: none;  */
-    margin-right: -1%;
+    margin-right: 0%;
 }
 
 .nav-links a {
@@ -236,6 +260,7 @@ footer {
     font-size: 1rem;
     transition: color 0.3s ease;
     padding: 5px 10px;
+    white-space: nowrap;
 }
 
 .nav-links button {
@@ -257,7 +282,7 @@ footer {
 /* Content Styling */
 .content-section {
     text-align: center;
-    padding: 50px;
+    padding: 100px 20px 50px;
     color: #fff;
     background-color: #111;
 }
@@ -271,7 +296,7 @@ footer {
 }
 
 .image-container img {
-    width: 100%;
+    width: 50%;
     max-width: 350px;
     border-radius: 10px;
 }
@@ -325,6 +350,7 @@ footer {
     line-height: 1.6;
     text-align: justify;
     padding: 0 20px;
+    margin-bottom: 15px;
 }
 
 /* Language Selection Styling */
@@ -335,6 +361,10 @@ footer {
     display: inline-block;
     margin: 20px auto;
     font-size: 1.2rem;
+}
+
+.language-selection p {
+    margin-bottom: 15px;
 }
 
 /* Custom Radio Buttons */
@@ -352,7 +382,7 @@ footer {
 .custom-radio .radio-label {
     background: white;
     color: #8b008b;
-    padding: 8px 15px;
+    padding: 10px 15px;
     border-radius: 20px;
     font-weight: bold;
     transition: 0.3s;
@@ -367,11 +397,17 @@ footer {
 
 /* Video Container */
 #video-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    text-align: center;
     margin-top: 20px;
 }
 
 video {
     width: 100%;
+    max-width: 600px;
+    height: auto;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
 }
@@ -393,7 +429,8 @@ video {
 .sidebar .nav-links {
     display: flex;
     flex-direction: column;
-    padding: 0;
+    /* text-align: left; */
+    padding: 10px;
 }
 
 .sidebar .nav-links li {
@@ -405,12 +442,12 @@ video {
     color: white;
     font-size: 1.2rem;
     display: block;
+    padding: 10px;
     transition: 0.3s;
 }
 
 .sidebar .nav-links a:hover {
     background: #ff3c61;
-    padding-left: 10px;
 }
 
 /* Show Sidebar when Active */
@@ -421,12 +458,8 @@ video {
 /* Hamburger Menu */
 .menu-toggle {
     display: none;
-    flex-direction: column;
+    font-size: 1.5rem;
     cursor: pointer;
-    position: absolute;
-    right: 50px;
-    top: 5px;
-    z-index: 1100;
 }
 
 .menu-toggle div {
@@ -440,18 +473,33 @@ video {
 /* Responsive Design */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: flex;
+        display: block;
     }
 
     .nav-links {
         display: none;
+    }
+
+    .sidebar {
+        width: 80%;
+        left: -80%;
+    }
+
+    .image-container img {
+        max-width: 300px;
+    }
+
+    .intro p {
+        font-size: 0.9rem;
+        padding: 0 10px;
+        text-align: left;
     }
 }
 
 /* About Section */
 .about-container {
     display: flex;
-    flex-wrap: wrap; /* Ensures proper wrapping on small screens */
+    flex-wrap: wrap;
     gap: 40px;
     padding: 50px 30px;
     justify-content: center;
@@ -463,10 +511,10 @@ video {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column; /* Stack image & text */
+    flex-direction: column; 
     gap: 30px;
     background: linear-gradient(135deg, #222, #444);
-    padding: 25px;
+    padding: 10px;
     border-radius: 20px;
     box-shadow: 0px 6px 14px rgba(255, 255, 255, 0.15);
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
@@ -487,8 +535,9 @@ video {
 
 /* Image */
 .about-img {
-    width: 140px;/* Increased image size */
-    height: 140px;
+    width: 200px;
+    max-width: 200px;
+    height: 250px;
     border-radius: 12px;
     transition: transform 0.3s ease-in-out;
 }
@@ -501,13 +550,12 @@ video {
 
 /* About Text */
 .about-text {
-    flex: 1;
+    width: 100%;
     text-align: justify;
-    max-width: 90%;
 }
 
 #about h2 {
-    font-size: 2rem; /* Adjust size as needed */
+    font-size: 2rem;
     text-align: center;
     font-weight: bold;
 }
@@ -515,7 +563,7 @@ video {
 /* Heading Animation */
 .about-text h3 {
     font-size: 1.8rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     background: linear-gradient(90deg, #ff4081, #ff6ec4);
     -webkit-background-clip: text;
     color: transparent;
@@ -533,7 +581,7 @@ video {
 
 /* List Styling */
 .about-text ul {
-    padding-left: 25px;
+    padding-left: 15px;
 }
 
 .about-text ul li {
@@ -556,33 +604,23 @@ video {
 /* Responsive Design */
 @media (max-width: 1024px) {
     .about-card {
-        width: 80%;
-    }
-
-    .about-text h3 {
-        font-size: 1.5rem;
-    }
-
-    .about-text p,
-    .about-text ul {
-        font-size: 0.95rem;
+        max-width: 90%;
     }
 }
 
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
-        padding: 30px;
+        padding: 20px;
     }
 
     .about-card {
-        width: 90%;
-        min-height: auto;
+        width: 100%;
+        max-width: 400px;
     }
 
     .about-img {
-        width: 100%;
-        max-width: 250px;
+        max-width: 180px;
     }
 
     .about-text h3 {
@@ -598,7 +636,7 @@ video {
 @media (max-width: 480px) {
     .about-card {
         width: 95%;
-        padding: 20px;
+        padding: 15px;
     }
 
     .about-text h3 {
@@ -614,10 +652,11 @@ video {
 /* Techniques Section */
 .slideshow-container {
     position: relative;
-    margin: 40px auto;
-    max-width: 800px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 100%;
     text-align: center;
-    padding: 20px;
+    padding: 15px;
     background: linear-gradient(135deg, #222, #333);
     border-radius: 12px;
     box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.1);
@@ -628,7 +667,8 @@ video {
 /* Image Styling */
 .slideshow-container img {
     width: 100%;
-    max-width: 700px;
+    max-width: none;
+    max-width: 100%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
@@ -668,9 +708,11 @@ p#caption {
 button {
     background-color: #ff69b4;
     border: none;
+    max-width: 100%;
+    flex: 1;
     color: white;
-    padding: 12px 25px;
-    margin: 8px;
+    padding: 10px 20px;
+    margin: 5px;
     font-size: 1rem;
     cursor: pointer;
     border-radius: 8px;
@@ -692,7 +734,7 @@ button:hover {
         transform: translateY(10px);
     }
     to {
-        opacity: 1;
+        opacity: 0;
         transform: translateY(0);
     }
 }
@@ -715,7 +757,7 @@ button:hover {
 
 @media (max-width: 768px) {
     .slideshow-container {
-        max-width: 95%;
+        width: 100%;
         padding: 15px;
     }
 
@@ -742,7 +784,6 @@ button:hover {
     button {
         font-size: 0.85rem;
         padding: 8px 15px;
-        margin: 5px;
     }
 }
 
@@ -750,6 +791,7 @@ button:hover {
 .resource-list {
     list-style: none;
     padding: 0;
+    width: 100%;
     margin: 0 auto;
     max-width: 800px; /* Centers the list and prevents it from being too wide */
 }
@@ -767,7 +809,6 @@ button:hover {
     font-weight: bold;
 }
 
-/* Make links more readable and clickable */
 .resource-list a {
     text-decoration: none;
     color: #ff69b4;
@@ -807,26 +848,32 @@ button:hover {
     }
 }
 
+body, html {
+    overflow-x: hidden;
+    width: 100vw;
+}
+
 /* AI Assistant Page Styles */
 .chat-container {
     display: flex;
     flex-direction: column;
     width: 90%;
-    max-width: 500px;
+    max-width: 900px;
     height: auto; 
     min-height: 500px; /* Ensures minimum size */
     margin: auto;
     background-color: #222;
-    padding: 10px;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
-    position: relative;
-    max-height: 90vh; /* Ensure it has enough space */
-    overflow: auto; /* Allow scrolling */
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.1);
+    max-height: 85vh; /* Ensure it has enough space */
+    overflow-y: auto; 
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 #ai-assistant h2 {
-    font-size: 2rem; /* Adjust size as needed */
+    font-size: 1.8rem; /* Adjust size as needed */
     text-align: center;
     font-weight: bold;
 }
@@ -834,18 +881,18 @@ button:hover {
 /* Chat Box */
 #chat-box {
     flex: 1;
-    height: 350px; /* Reduced height */
+    height: 40vh; /* Reduced height */
+    min-height: 300px;
     overflow-y: auto;
     padding: 10px;
     background-color: #1e1e1e;
     border-radius: 8px;
     font-size: 1rem;
     color: white;
-    /* word-wrap: break-word; */
     display: flex;
     flex-direction: column;
-    max-height: 400px; /* Adjust as needed */
-    overflow-y: auto;
+    max-height: 400px; 
+    box-sizing: border-box;
 }
 
 /* Ensures smooth scrolling */
@@ -885,40 +932,32 @@ button:hover {
 /* Chat Input */
 .chat-input {
     display: flex;
-    flex-direction: column; /* Horizontal by default */
     align-items: center;
-    /* justify-content: space-between; */
-    justify-content: center;
+    justify-content: space-between;
     gap: 10px;
-    background-color: #1e1e1e;
-    padding: 12px;
+    background-color: #3c3b3b;
+    padding: 10px 10px;
     border-radius: 8px;
     width: 100%;
-}
-
-/* Input Field */
-.chat-input input {
-    width: 100%;
-    flex: 1;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    background-color: #333;
-    color: white;
-    outline: none;
+    max-width: 900px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    flex-wrap: wrap;
 }
 
 #clear-btn {
-    background-color: #4a2424; /* Red color to indicate reset */
+    background-color: #3e2121; /* Red color to indicate reset */
     color: white;
     border: none;
-    padding: 7px 2px;
-    width: 100px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 0.8rem;
+    border-radius: 3px;
+    font-size: 0.9rem;
     transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
 }
 
@@ -931,12 +970,31 @@ button:hover {
     background-color: #ff69b4;
     color: white;
     border: none;
-    padding: 12px 15px;
+    width: 35px;  /* Small square size */
+    height: 35px; /* Small square size */
     cursor: pointer;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    transition: background 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents shrinking */
+}
+
+
+/* Input Field */
+.chat-input input {
+    flex: 1; /* Allows input to expand */
+    padding: 12px;
+    border: none;
     border-radius: 5px;
     font-size: 1rem;
-    transition: background 0.3s ease-in-out;
-    flex-shrink: 0;
+    background-color: #333;
+    color: white;
+    outline: none;
+    box-sizing: border-box;
+    min-width: 65%; /* Ensures input takes most of the space */
 }
 
 button:hover {
@@ -946,20 +1004,20 @@ button:hover {
 /* ✅ Responsive Fixes */
 @media (max-width: 768px) {
     .chat-container {
-        width: 80%;
-        min-height: 500px; /* Adjusted for mobile */
-        padding: 5px;
+        width: 95%;
+        min-height: 450px; /* Adjusted for mobile */
+        padding: 10px;
     }
 
     #chat-box {
-        height: 350px; /* Adjusted height */
+        min-height: 280px;
         font-size: 0.9rem;
-        padding: 8px;
     }
 
     .chat-input {
         flex-direction: column; /* Stack on small screens */
         gap: 8px;
+        align-items: center;
     }
 
     .chat-input input {
@@ -967,48 +1025,60 @@ button:hover {
         padding: 10px;
     }
 
-    .chat-input button {
+    .chat-input button, #clear-btn {
         font-size: 0.9rem;
-        padding: 10px;
         width: 100%; /* Full width button */
+        min-width: auto;
     }
 }
 
 @media (max-width: 480px) {
     .chat-container {
-        width: 100%;
+        width: 98%;
         padding: 8px;
     }
 
     #chat-box {
-        height: 300px; /* Smaller height */
+        min-height: 250px;
         font-size: 0.85rem;
     }
 
     .chat-input {
+        flex-direction: column;
+        align-items: center;
         gap: 6px;
     }
 
     .chat-input input {
         font-size: 0.85rem;
-        padding: 8px;
+        width: 100%;
     }
 
-    .chat-input button {
-        padding: 8px;
+    .chat-input button, #clear-btn {
+        width: 100%;
+        height: 40px;
         font-size: 0.85rem;
     }
 }
 
 /* Contact Form Styles */
+.container {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
     max-width: 600px;
-    margin: auto;
+    width: 100%;
+    margin: 15px 10px;
     background-color: #222;
     padding: 20px;
+    box-sizing: border-box;
     border-radius: 10px;
     box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
 }
@@ -1017,6 +1087,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     text-align: left;
+    width: 100%;
 }
 
 .form-group label {
@@ -1027,11 +1098,13 @@ button:hover {
 
 .form-group input,
 .form-group textarea {
-    width: 98%;
-    padding: 10px;
+    display: block;
+    width: 100%;  /* Full width */
+    max-width: 100%;
+    padding: 14px;
     border-radius: 5px;
     border: none;
-    font-size: 16px;
+    font-size: 1rem;
     background-color: #333;
     color: #fff;
 }
@@ -1043,16 +1116,18 @@ button:hover {
 }
 
 .form-group textarea {
-    resize: none;
+    height: 150px;
+    resize: vertical;
 }
 
 button {
     background-color: #ff69b4;
     border: none;
     color: white;
-    padding: 12px;
-    font-size: 16px;
+    padding: 14px;
+    font-size: 1rem;
     cursor: pointer;
+    width: 100%;
     border-radius: 5px;
 }
 
@@ -1074,19 +1149,17 @@ button:hover {
     .form-group input,
     .form-group textarea {
         font-size: 0.95rem;
-        padding: 10px;
     }
 
     button {
         font-size: 0.95rem;
-        padding: 10px;
     }
 }
 
 @media (max-width: 480px) {
     .contact-form {
         width: 100%; /* Full width for small screens */
-        padding: 10px;
+        padding: 12px;
     }
 
     .form-group label {
@@ -1096,11 +1169,10 @@ button:hover {
     .form-group input,
     .form-group textarea {
         font-size: 0.9rem;
-        padding: 8px;
+        padding: 10px;
     }
 
     button {
         font-size: 0.9rem;
-        padding: 8px;
     }
 }
